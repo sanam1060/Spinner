@@ -1,0 +1,14 @@
+
+const spinner = function(spins) {
+  let spinArr = ['|', '/', '-', `\\` ];
+  let spinTime = 100;
+  for (let i = 0; i < spins; i++) {
+    for (let line of spinArr) {
+      setTimeout(() => {
+        process.stdout.write(`\r ${line}`);
+      }, spinTime);
+      spinTime += 200;
+    }
+  }
+};
+spinner(6);
